@@ -1,11 +1,28 @@
 .single_product{
     height: 300px;
-    background-color: rgba(170, 105, 9, 0.543);
-    height: 500px;
+    /* background-color: rgb(170, 106, 9);  */
+    height: 420px;
     border: 1px solid green;
     padding: 5px;
     margin: 5px;
+    position: relative;
 }
 .single_product > img{
     width: 200px;
+}
+
+/* btn  */
+.btn-add{
+    width: 100%;
+    background-color: #0a9e05;
+    border-radius: 5px;
+    padding: 2px;
+    font-weight: bolder;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.btn-add:hover{
+    background-color: orange;
+    transition: all 500ms;
 }
