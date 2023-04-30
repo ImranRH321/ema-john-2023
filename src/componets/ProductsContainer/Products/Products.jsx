@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./Products.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
+import { addDbData } from "../../../utilities/browserStoreDb";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -18,10 +19,9 @@ const Products = () => {
   const handleAddToCart = (product) => {
   const newCart = [...cart, product]
     setCart(newCart);
+    addDbData(product.id)
   };
  
-  console.log("cart", cart);
-
   return (
     <div className="products_container">
       <div className="products">
