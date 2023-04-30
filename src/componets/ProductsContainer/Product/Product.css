@@ -1,0 +1,11 @@
+.single_product{
+    height: 300px;
+    background-color: rgba(170, 105, 9, 0.543);
+    height: 500px;
+    border: 1px solid green;
+    padding: 5px;
+    margin: 5px;
+}
+.single_product > img{
+    width: 200px;
+}
