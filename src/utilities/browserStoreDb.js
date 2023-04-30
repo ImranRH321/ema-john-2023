@@ -9,7 +9,7 @@ const addDbData = (id) => {
   // console.log(quantityClick,'quantityClick ' );
   // console.log(shoppingCart,'shoppingCart ' );
   if (!quantityClick) {
-    shoppingCart[id] = 1;
+    shoppingCart[id] = 'one';
   } else {
     const newQuantity = shoppingCart[id] + 1;
     shoppingCart[id] = newQuantity;
