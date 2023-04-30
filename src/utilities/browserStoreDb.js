@@ -1,21 +1,22 @@
+// shoppingStoreDb
 const addDbData = (id) => {
-  let shoppingCart = {};
-  const storeCart = localStorage.getItem("shoppingCart");
+  // someOfArray id value object under array how to possible
+  let cart = {
+    // 124e13b9-2d54-4b2f-a74d-a77b362d6 : value
+  };
+  const storeCart = localStorage.getItem("shoppingStoreData");
   if (storeCart) {
-    shoppingCart = JSON.parse(storeCart);
+    cart = JSON.parse(storeCart);
   }
-
-  const quantityClick = shoppingCart[id];
-  // console.log(quantityClick,'quantityClick ' );
-  // console.log(shoppingCart,'shoppingCart ' );
-  if (!quantityClick) {
-    shoppingCart[id] = 'one';
+  // *****************
+  const totalClickQuantity = cart[id];
+  if (!totalClickQuantity) {
+    cart[id] = 1;
   } else {
-    const newQuantity = shoppingCart[id] + 1;
-    shoppingCart[id] = newQuantity;
+    const userNextClickQuantity = totalClickQuantity + 1;
+    cart[id] = userNextClickQuantity;
   }
-
-  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  localStorage.setItem("shoppingStoreData", JSON.stringify(cart));
 };
 
 export { addDbData };

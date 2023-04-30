@@ -2,10 +2,10 @@ import React from "react";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
-  // console.log("cart container all array", cart);
+  console.log("cart data ", cart);
   let totalPrice = 0;
   let totalShipping = 0;
-
+  console.log(cart.quantity,'lnew');
   for (const product of cart) {
     //  console.log(product.shipping);
     totalPrice += product.price;
@@ -16,7 +16,9 @@ const Cart = ({ cart }) => {
   return (
     <div>
       <h5 style={{ textAlign: "center" }}>Order Summary</h5>
-      <p>Selected Items: {cart.length}</p>
+      <p>
+        Selected Items: {cart.quantity ? cart.quantity : "no Quanity found"}
+      </p>
       <p>Total Price: ${totalPrice} </p>
       <p>Total Shipping Charge: ${totalShipping}</p>
       <p>Tax: ${tax.toFixed(2)}</p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState } from "react";
 
 import "./Products.css";
 import Product from "../Product/Product";
@@ -17,11 +17,29 @@ const Products = () => {
 
   // button click parent container data child components
   const handleAddToCart = (product) => {
-  const newCart = [...cart, product]
+    const newCart = [...cart, product];
     setCart(newCart);
-    addDbData(product.id)
+    addDbData(product.id);
   };
- 
+
+  useEffect(() => {
+    let saveToData = [];
+
+    const dbData = localStorage.getItem("shoppingStoreData");
+    const getCartStoreDb = JSON.parse(dbData);
+    for (const id in getCartStoreDb) {
+      const existProduct = products.find((product) => product.id === id);
+      if (existProduct) {
+        const quantity = getCartStoreDb[id];
+        existProduct.quantity = quantity;
+        saveToData.push(existProduct);
+      }
+      console.log("existProduct", existProduct);
+    }
+    console.log("saveToData", saveToData);
+    setCart(saveToData);
+  }, [products]);
+
   return (
     <div className="products_container">
       <div className="products">
