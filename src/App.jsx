@@ -1,12 +1,14 @@
 import { useState } from "react";
-import "./App.css";
+
 import Header from "./componets/Header/Header";
+import Products from "./componets/ProductsContainer/Products/Products";
 
 function App() {
   return (
     <>
-    <h1>ERa €John Repose </h1>
-    <Header></Header>
+      <h1>ERa €John Repose </h1>
+      <Header></Header>
+      <Products></Products>
     </>
   );
 }

@@ -1,0 +1,14 @@
+.products_container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    width: 100%;
+}
+.products{
+     border: 2px solid red;
+     
+}
+.cart{
+     border: 2px solid saddlebrown;
+     background-color: #FF9900;
+
+}
